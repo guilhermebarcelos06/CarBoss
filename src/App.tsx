@@ -5,20 +5,20 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { 
-  Droplets, 
-  Sparkles, 
-  ShieldCheck, 
-  Armchair, 
-  Zap, 
-  Wind, 
-  MapPin, 
-  Phone, 
+import {
+  Droplets,
+  Sparkles,
+  ShieldCheck,
+  Armchair,
+  Zap,
+  Wind,
+  MapPin,
+  Phone,
   Facebook,
   Share2,
-  Instagram, 
-  Clock, 
-  ChevronRight, 
+  Instagram,
+  Clock,
+  ChevronRight,
   Star,
   Menu,
   X,
@@ -37,45 +37,45 @@ const NAVBAR_LINKS = [
 ];
 
 const SERVICES = [
-  { 
-    icon: <Droplets className="w-6 h-6" />, 
-    title: 'Eco-Lavagem', 
-    desc: 'Limpeza técnica sustentável com acabamento hidrofóbico.' 
+  {
+    icon: <Droplets className="w-6 h-6" />,
+    title: 'Eco-Lavagem',
+    desc: 'Limpeza técnica sustentável com acabamento hidrofóbico.'
   },
-  { 
-    icon: <Sparkles className="w-6 h-6" />, 
-    title: 'Polimento Técnico', 
-    desc: 'Remoção de imperfeições e restauração total do brilho especular.' 
+  {
+    icon: <Sparkles className="w-6 h-6" />,
+    title: 'Polimento Técnico',
+    desc: 'Remoção de imperfeições e restauração total do brilho especular.'
   },
-  { 
-    icon: <ShieldCheck className="w-6 h-6" />, 
-    title: 'Vitrificação 9H', 
-    desc: 'Proteção nanométrica extrema contra agentes químicos e UV.' 
+  {
+    icon: <ShieldCheck className="w-6 h-6" />,
+    title: 'Vitrificação 9H',
+    desc: 'Proteção nanométrica extrema contra agentes químicos e UV.'
   },
-  { 
-    icon: <Armchair className="w-6 h-6" />, 
-    title: 'Interior Detail', 
-    desc: 'Higienização profunda com hidratação de couros e plásticos.' 
+  {
+    icon: <Armchair className="w-6 h-6" />,
+    title: 'Interior Detail',
+    desc: 'Higienização profunda com hidratação de couros e plásticos.'
   },
-  { 
-    icon: <Zap className="w-6 h-6" />, 
-    title: 'Rest. de Faróis', 
-    desc: 'Clareamento e proteção termo-plástica para máxima segurança.' 
+  {
+    icon: <Zap className="w-6 h-6" />,
+    title: 'Rest. de Faróis',
+    desc: 'Clareamento e proteção termo-plástica para máxima segurança.'
   },
-  { 
-    icon: <Dna className="w-6 h-6" />, 
-    title: 'Proteção Graphene', 
-    desc: 'A mais alta tecnologia em proteção de superfícies atual.' 
+  {
+    icon: <Dna className="w-6 h-6" />,
+    title: 'Proteção Graphene',
+    desc: 'A mais alta tecnologia em proteção de superfícies atual.'
   },
-  { 
-    icon: <Wind className="w-6 h-6" />, 
-    title: 'Oxy-Sanitização', 
-    desc: 'Eliminação de odores e bactérias através de ozônio.' 
+  {
+    icon: <Wind className="w-6 h-6" />,
+    title: 'Oxy-Sanitização',
+    desc: 'Eliminação de odores e bactérias através de ozônio.'
   },
-  { 
-    icon: <Shield className="w-6 h-6" />, 
-    title: 'Chassis Detail', 
-    desc: 'Limpeza e proteção técnica do compartimento do motor e suspensão.' 
+  {
+    icon: <Shield className="w-6 h-6" />,
+    title: 'Chassis Detail',
+    desc: 'Limpeza e proteção técnica do compartimento do motor e suspensão.'
   },
 ];
 
@@ -93,28 +93,28 @@ const PROTOCOLS = [
 ];
 
 const GALLERY_IMAGES = [
-  { 
-    url: 'https://images.unsplash.com/photo-1542362567-b52b20fb427a?auto=format&fit=crop&q=80&w=1200',
+  {
+    url: 'img/gtr.png',
     title: 'Precision Finish',
     tag: 'Vitrificação'
   },
-  { 
-    url: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=800',
+  {
+    url: 'img/ferrari.png',
     title: 'Deep Polish',
     tag: 'Polimento'
   },
-  { 
-    url: 'https://images.unsplash.com/photo-1619623696860-2647c093a54d?auto=format&fit=crop&q=80&w=800',
+  {
+    url: 'img/mercedes.png',
     title: 'Eco Shine',
     tag: 'Limpeza'
   },
-  { 
-    url: 'https://images.unsplash.com/photo-1616788494707-ec28f08d05a1?auto=format&fit=crop&q=80&w=800',
+  {
+    url: 'img/suv.png',
     title: 'Elite Protection',
     tag: 'Proteção'
   },
-  { 
-    url: 'https://images.unsplash.com/photo-1563720223185-11003d516905?auto=format&fit=crop&q=80&w=800',
+  {
+    url: 'img/ferrari.png',
     title: 'Royal Interior',
     tag: 'Higienização'
   },
@@ -159,20 +159,19 @@ export default function App() {
   return (
     <div className={`relative font-barlow selection:bg-brand selection:text-white bg-[#080808] ${mobileMenuOpen ? 'overflow-hidden h-screen' : ''}`}>
       <div className="noise-overlay" />
-      
+
       {/* Ambient Glows */}
       <div className="ambient-glow top-[10%] right-[-10%] w-[500px] h-[500px] bg-brand/10 md:bg-brand/20 opacity-30" />
       <div className="ambient-glow bottom-[20%] left-[-10%] w-[400px] h-[400px] bg-brand/5 md:bg-brand/10 opacity-20" />
-      
+
       {/* Navbar Container */}
-      <nav 
-        className={`fixed top-0 w-full z-[120] transition-all duration-500 flex items-center justify-between px-6 md:px-12 py-5 lg:py-8 ${
-          scrolled && !mobileMenuOpen ? 'glass bg-[#080808]/80 py-4 border-b border-white/5' : 'bg-transparent'
-        }`}
+      <nav
+        className={`fixed top-0 w-full z-[120] transition-all duration-500 flex items-center justify-between px-6 md:px-12 py-5 lg:py-8 ${scrolled && !mobileMenuOpen ? 'glass bg-[#080808]/80 py-4 border-b border-white/5' : 'bg-transparent'
+          }`}
       >
         <div className="flex items-center gap-3 md:gap-4 relative z-[130]">
-          <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-brand flex items-center justify-center bg-black shadow-[0_0_15px_rgba(224,28,36,0.4)] transition-transform hover:scale-110">
-            <span className="text-brand font-display text-xl">CB</span>
+          <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-brand flex items-center justify-center bg-black shadow-[0_0_15px_rgba(224,28,36,0.4)] transition-transform hover:scale-110 overflow-hidden">
+            <img src="img/logo.png" alt="CarBoss Logo" className="w-full h-full object-contain p-1" />
           </div>
           <h1 className="text-xl md:text-2xl font-display tracking-[0.2em] uppercase text-white">Car<span className="text-brand">Boss</span></h1>
         </div>
@@ -181,8 +180,8 @@ export default function App() {
         <ul className="hidden lg:flex items-center gap-10">
           {NAVBAR_LINKS.map((link) => (
             <li key={link.name}>
-              <a 
-                href={link.href} 
+              <a
+                href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
                 className="text-[10px] uppercase tracking-[0.3em] font-bold text-gray-400 hover:text-brand transition-all relative group"
               >
@@ -192,9 +191,9 @@ export default function App() {
             </li>
           ))}
           <li>
-            <a 
-              href="https://wa.me/556199741358" 
-              target="_blank" 
+            <a
+              href="https://wa.me/556199741358"
+              target="_blank"
               className="bg-brand hover:bg-brand-dark text-white px-8 py-3 text-[10px] font-bold uppercase tracking-[0.2em] transition-all transform hover:-translate-y-1 shadow-[0_10px_30px_-5px_rgba(224,28,36,0.5)]"
             >
               Agendar
@@ -203,7 +202,7 @@ export default function App() {
         </ul>
 
         {/* Mobile menu toggle */}
-        <button 
+        <button
           className="lg:hidden w-10 h-10 flex items-center justify-center text-white bg-white/5 rounded-full border border-white/10 relative z-[130] hover:bg-brand/10 transition-colors"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
@@ -214,7 +213,7 @@ export default function App() {
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -222,23 +221,23 @@ export default function App() {
           >
             <div className="absolute inset-0 opacity-[0.05] bg-[radial-gradient(circle_at_center,_var(--tw-colors-brand)_0%,transparent_70%)]" />
             {NAVBAR_LINKS.map((link, i) => (
-              <motion.a 
+              <motion.a
                 key={link.name}
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.1 * i }}
-                href={link.href} 
+                href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
                 className="text-5xl font-display tracking-widest text-[#444] hover:text-brand transition-colors text-center"
               >
                 {link.name}
               </motion.a>
             ))}
-            <motion.a 
+            <motion.a
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.4 }}
-              href="https://wa.me/556199741358" 
+              href="https://wa.me/556199741358"
               className="mt-8 bg-brand text-white px-12 py-5 font-bold uppercase tracking-widest text-sm shadow-[0_20px_40px_-5px_rgba(224,28,36,0.4)]"
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -256,7 +255,7 @@ export default function App() {
         </div>
 
         <div className="container mx-auto grid lg:grid-cols-12 gap-12 items-center relative z-10">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
@@ -264,7 +263,7 @@ export default function App() {
           >
             <div className="inline-flex flex-wrap items-center justify-center lg:justify-start gap-4 md:gap-6">
               <div className="flex items-center gap-2 px-3 py-1 bg-red-950/20 border border-brand/30 rounded-sm text-[10px] font-bold tracking-[0.3em] uppercase text-brand">
-                <Star size={10} className="fill-brand" /> 
+                <Star size={10} className="fill-brand" />
                 <span className="mt-0.5">Premium Detail Studio</span>
               </div>
               <div className="flex items-center gap-2 text-gray-500 text-[10px] font-bold uppercase tracking-widest">
@@ -282,8 +281,8 @@ export default function App() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 mt-4 items-center justify-center lg:justify-start">
-              <a 
-                href="https://wa.me/556199741358" 
+              <a
+                href="https://wa.me/556199741358"
                 target="_blank"
                 className="w-full sm:w-auto bg-brand text-white px-10 py-5 font-bold text-[10px] uppercase tracking-[0.3em] transition-all hover:bg-brand-dark shadow-[0_15px_40px_-5px_rgba(224,28,36,0.4)] flex items-center justify-center gap-3 group"
               >
@@ -291,30 +290,30 @@ export default function App() {
               </a>
               <div className="flex gap-8 items-center px-4">
                 <div className="flex flex-col items-center lg:items-start leading-none">
-                   <span className="text-3xl font-display text-brand">4.5</span>
-                   <span className="text-[8px] font-bold uppercase tracking-[0.2em] text-gray-500">Google Rating</span>
+                  <span className="text-3xl font-display text-brand">4.5</span>
+                  <span className="text-[8px] font-bold uppercase tracking-[0.2em] text-gray-500">Google Rating</span>
                 </div>
                 <div className="w-px h-8 bg-white/10" />
                 <div className="flex flex-col items-center lg:items-start leading-none">
-                   <span className="text-3xl font-display text-brand">22+</span>
-                   <span className="text-[8px] font-bold uppercase tracking-[0.2em] text-gray-500">Serviços</span>
+                  <span className="text-3xl font-display text-brand">22+</span>
+                  <span className="text-[8px] font-bold uppercase tracking-[0.2em] text-gray-500">Serviços</span>
                 </div>
               </div>
             </div>
           </motion.div>
 
           {/* Featured Visual */}
-          <motion.div 
+          <motion.div
             className="lg:col-span-12 xl:col-span-5 relative hidden xl:block"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, delay: 0.2 }}
           >
             <div className="relative z-10 w-full aspect-[4/5] rounded-[2px] overflow-hidden border border-white/5 shadow-2xl group">
-              <img 
-                src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1200" 
-                className="w-full h-full object-cover grayscale-[0.2] transition-transform duration-1000 group-hover:scale-110" 
-                alt="High-end Car" 
+              <img
+                src="img/mercedes.png"
+                className="w-full h-full object-cover grayscale-[0.2] transition-transform duration-1000 group-hover:scale-110"
+                alt="High-end Car"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-10 left-10 text-white translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
@@ -341,7 +340,7 @@ export default function App() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {SERVICES.map((s, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 {...fadeIn}
                 transition={{ duration: 0.6, delay: i * 0.05 }}
@@ -374,7 +373,7 @@ export default function App() {
         <div className="container mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-white/5 border border-white/5">
             {PROTOCOLS.map((p, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -405,7 +404,7 @@ export default function App() {
                 </h2>
                 <h3 className="text-4xl sm:text-5xl md:text-7xl font-display font-black tracking-tighter leading-none text-white mb-10 uppercase xl:normal-case">QUALIDADE<br />SEM <span className="text-brand italic">CONCESSÕES.</span></h3>
                 <p className="text-gray-400 text-lg leading-relaxed mb-12 font-medium">Cada veículo que entra na CarBoss Pátio Brasil recebe um diagnóstico individualizado e tratamento técnico que visa o máximo de durabilidade e estética.</p>
-                
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                   {ADVANTAGES.map((adv, i) => (
                     <div key={i} className="flex flex-col gap-3 group">
@@ -418,22 +417,22 @@ export default function App() {
               </motion.div>
             </div>
             <div className="lg:col-span-12 xl:col-span-7 flex justify-end">
-               <motion.div 
-                 initial={{ opacity: 0, scale: 0.9 }}
-                 whileInView={{ opacity: 1, scale: 1 }}
-                 transition={{ duration: 1 }}
-                 className="relative w-full aspect-video lg:aspect-square max-w-2xl glass p-1 border-none shadow-[0_0_100px_rgba(224,28,36,0.1)]"
-               >
-                 <img 
-                    src="https://images.unsplash.com/photo-1579208575657-c595a05383b7?auto=format&fit=crop&q=80&w=1200" 
-                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" 
-                    alt="Processo CarBoss" 
-                 />
-                 <div className="absolute -bottom-10 -right-10 bg-brand p-12 hidden md:block shadow-2xl">
-                   <div className="font-display text-7xl text-white leading-none">01</div>
-                   <div className="text-[10px] uppercase font-bold tracking-[0.3em] text-black">Brasília Elite Choice</div>
-                 </div>
-               </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1 }}
+                className="relative w-full aspect-video lg:aspect-square max-w-2xl glass p-1 border-none shadow-[0_0_100px_rgba(224,28,36,0.1)]"
+              >
+                <img
+                  src="img/suv.png"
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+                  alt="Processo CarBoss"
+                />
+                <div className="absolute -bottom-10 -right-10 bg-brand p-12 hidden md:block shadow-2xl">
+                  <div className="font-display text-7xl text-white leading-none">01</div>
+                  <div className="text-[10px] uppercase font-bold tracking-[0.3em] text-black">Brasília Elite Choice</div>
+                </div>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -455,14 +454,14 @@ export default function App() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 h-auto md:h-[900px]">
-            <motion.div 
+            <motion.div
               {...fadeIn}
               className="md:col-span-8 relative group overflow-hidden border border-white/5 h-[400px] md:h-full"
             >
-              <img src={GALLERY_IMAGES[0].url} className="w-full h-full object-cover grayscale-[0.4] group-hover:grayscale-0 transition-all duration-[1.5s] group-hover:scale-105" alt="Portfolio Highlight" />
+              <img src="img/gtr.png" className="w-full h-full object-cover grayscale-[0.4] group-hover:grayscale-0 transition-all duration-[1.5s] group-hover:scale-105" alt="Portfolio Highlight" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 p-8 md:p-16 flex flex-col justify-end">
                 <div className="absolute top-8 right-8 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
-                  <button 
+                  <button
                     onClick={(e) => {
                       e.stopPropagation();
                       if (navigator.share) {
@@ -485,16 +484,16 @@ export default function App() {
 
             <div className="md:col-span-4 grid grid-cols-2 md:grid-cols-1 gap-4 md:gap-6 h-full">
               {GALLERY_IMAGES.slice(1, 3).map((img, i) => (
-                <motion.div 
+                <motion.div
                   key={i}
                   {...fadeIn}
                   transition={{ delay: i * 0.2 }}
                   className="relative group overflow-hidden border border-white/5 h-[200px] md:h-full"
                 >
-                  <img src={img.url} className="w-full h-full object-cover grayscale-[0.6] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110" alt={`Portfolio ${i+2}`} />
+                  <img src={img.url} className="w-full h-full object-cover grayscale-[0.6] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110" alt={`Portfolio ${i + 2}`} />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 p-6 md:p-10 flex flex-col justify-end">
                     <div className="absolute top-6 right-6 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-75">
-                      <button 
+                      <button
                         onClick={(e) => {
                           e.stopPropagation();
                           if (navigator.share) {
@@ -549,8 +548,8 @@ export default function App() {
             <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500">Orçamentos</span>
             <span className="text-xl font-display tracking-widest text-brand leading-none">(61) 9974-1358</span>
           </div>
-          <a 
-            href="https://wa.me/556199741358" 
+          <a
+            href="https://wa.me/556199741358"
             target="_blank"
             className="w-14 h-14 bg-[#25d366] rounded-full flex items-center justify-center text-white shadow-[0_15px_30px_rgba(37,211,102,0.3)] hover:scale-110 active:scale-95 transition-all cursor-pointer group"
           >
@@ -564,15 +563,15 @@ export default function App() {
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-12 mb-20">
             <div className="flex items-center gap-5">
-              <div className="w-14 h-14 md:w-20 md:h-20 rounded-full border border-brand/40 flex items-center justify-center bg-black shadow-[0_0_30px_rgba(224,28,36,0.1)] transition-transform hover:scale-110">
-                <span className="text-brand font-display text-4xl">CB</span>
+              <div className="w-14 h-14 md:w-20 md:h-20 rounded-full border border-brand/40 flex items-center justify-center bg-black shadow-[0_0_30px_rgba(224,28,36,0.1)] transition-transform hover:scale-110 overflow-hidden">
+                <img src="img/logo.png" alt="CarBoss Logo" className="w-full h-full object-contain p-2" />
               </div>
               <div>
                 <h4 className="text-2xl md:text-4xl font-display tracking-widest uppercase text-white leading-none mb-1">CarBoss</h4>
                 <p className="text-[9px] uppercase tracking-[0.4em] text-gray-600 font-bold">Estética Automotiva de Elite</p>
               </div>
             </div>
-            
+
             <div className="flex gap-6">
               {[
                 { icon: <Instagram size={20} />, href: 'https://www.instagram.com/carboss_patio_brasil' },
@@ -591,8 +590,8 @@ export default function App() {
           <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-[9px] font-bold uppercase tracking-[0.3em] text-gray-700">© 2025 CARBOSS PÁTIO BRASIL. PROTEÇÃO E EXCELÊNCIA.</p>
             <div className="flex gap-8 text-[9px] font-bold uppercase tracking-[0.2em] text-gray-800 italic">
-               <span>Pátio Brasil Shopping | Subsolo G2</span>
-               <span>Brasília - DF</span>
+              <span>Pátio Brasil Shopping | Subsolo G2</span>
+              <span>Brasília - DF</span>
             </div>
           </div>
         </div>
@@ -600,7 +599,7 @@ export default function App() {
 
       {/* Floating Actions */}
       <div className="fixed bottom-6 right-6 z-[100] flex flex-col gap-4">
-        <motion.a 
+        <motion.a
           href="https://www.instagram.com/carboss_patio_brasil"
           target="_blank"
           rel="noreferrer"
@@ -612,9 +611,9 @@ export default function App() {
           <Instagram size={24} />
           <span className="absolute right-full mr-4 px-3 py-1 bg-black/80 text-white text-[10px] font-bold uppercase tracking-widest whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-white/10">Instagram</span>
         </motion.a>
-        
-        <motion.a 
-          href="https://wa.me/556199741358" 
+
+        <motion.a
+          href="https://wa.me/556199741358"
           target="_blank"
           rel="noreferrer"
           initial={{ opacity: 0, scale: 0.8, x: 20 }}
@@ -624,11 +623,11 @@ export default function App() {
           className="w-14 h-14 rounded-full bg-[#25d366] flex items-center justify-center text-white shadow-[0_10px_30px_rgba(37,211,102,0.3)] group relative"
         >
           <div className="absolute inset-0 rounded-full animate-ping bg-[#25d366] opacity-20 group-hover:opacity-0 transition-opacity" />
-          <svg 
-            viewBox="0 0 24 24" 
-            width="24" 
-            height="24" 
-            fill="currentColor" 
+          <svg
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            fill="currentColor"
             className="relative z-10"
           >
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.414 0 .01 5.403.01 12.039c0 2.12.556 4.189 1.613 6.046L0 24l6.09-1.597a11.946 11.946 0 005.955 1.595h.005c6.634 0 12.037-5.405 12.041-12.042a11.815 11.815 0 00-3.593-8.307" />
