@@ -130,6 +130,15 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [mobileMenuOpen]);
+
   const fadeIn = {
     initial: { opacity: 0, y: 30 },
     whileInView: { opacity: 1, y: 0 },
@@ -157,13 +166,7 @@ export default function App() {
   };
 
   return (
-    <div className={`relative font-barlow selection:bg-brand selection:text-white bg-[#080808] ${mobileMenuOpen ? 'overflow-hidden h-screen' : ''}`}>
-      <div className="noise-overlay" />
-
-      {/* Ambient Glows */}
-      <div className="ambient-glow top-[10%] right-[-10%] w-[500px] h-[500px] bg-brand/10 md:bg-brand/20 opacity-30" />
-      <div className="ambient-glow bottom-[20%] left-[-10%] w-[400px] h-[400px] bg-brand/5 md:bg-brand/10 opacity-20" />
-
+    <>
       {/* Navbar Container */}
       <nav
         className={`fixed top-0 w-full z-[120] transition-all duration-500 flex items-center justify-between px-4 sm:px-6 md:px-12 py-4 md:py-5 lg:py-8 ${scrolled && !mobileMenuOpen ? 'glass bg-[#080808]/90 py-3 md:py-4 border-b border-white/5' : 'bg-transparent'
@@ -248,7 +251,13 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      {/* Hero Section */}
+      <div className="relative overflow-x-hidden font-barlow selection:bg-brand selection:text-white bg-[#080808]">
+        <div className="noise-overlay" />
+        {/* Ambient Glows */}
+        <div className="ambient-glow top-[10%] right-[-10%] w-[500px] h-[500px] bg-brand/10 md:bg-brand/20 opacity-30" />
+        <div className="ambient-glow bottom-[20%] left-[-10%] w-[400px] h-[400px] bg-brand/5 md:bg-brand/10 opacity-20" />
+
+        {/* Hero Section */}
       <section className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center pt-36 pb-20 md:pt-48 md:pb-32 px-4 sm:px-6 md:px-12 overflow-hidden">
         {/* Background Grid Decoration */}
         <div className="absolute inset-0 z-0 flex items-center justify-center opacity-[0.03] pointer-events-none">
@@ -598,9 +607,10 @@ export default function App() {
           </div>
         </div>
       </footer>
+      </div>
 
       {/* Floating Actions */}
-      <div className="fixed bottom-6 right-6 z-[100] flex flex-col gap-4">
+      <div className="fixed bottom-8 sm:bottom-6 right-4 sm:right-6 z-[100] flex flex-col gap-4 pb-[env(safe-area-inset-bottom)] pointer-events-none *:pointer-events-auto">
         <motion.a
           href="https://www.instagram.com/carboss_patio_brasil"
           target="_blank"
@@ -637,6 +647,6 @@ export default function App() {
           <span className="absolute right-full mr-4 px-3 py-1 bg-black/80 text-white text-[10px] font-bold uppercase tracking-widest whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-white/10">WhatsApp</span>
         </motion.a>
       </div>
-    </div>
+    </>
   );
 }
