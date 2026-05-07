@@ -169,7 +169,7 @@ export default function App() {
     <>
       {/* Navbar Container */}
       <nav
-        className={`fixed top-0 w-full z-[120] transition-all duration-500 flex items-center justify-between px-4 sm:px-6 md:px-12 py-4 md:py-5 lg:py-8 ${scrolled && !mobileMenuOpen ? 'glass bg-[#080808]/90 py-3 md:py-4 border-b border-white/5' : 'bg-transparent'
+        className={`fixed top-0 w-full z-[9999] transition-all duration-500 flex items-center justify-between px-4 sm:px-6 md:px-12 py-4 md:py-5 lg:py-8 ${scrolled && !mobileMenuOpen ? 'glass bg-[#080808]/90 py-3 md:py-4 border-b border-white/5' : 'bg-transparent'
           }`}
       >
         <div className="flex items-center gap-3 md:gap-4 relative z-[130]">
@@ -610,7 +610,7 @@ export default function App() {
       </div>
 
       {/* Floating Actions */}
-      <div className="fixed bottom-8 sm:bottom-6 right-4 sm:right-6 z-[100] flex flex-col gap-4 pb-[env(safe-area-inset-bottom)] pointer-events-none *:pointer-events-auto">
+      <div className="fixed bottom-12 sm:bottom-8 right-4 sm:right-6 z-[9999] flex flex-col-reverse gap-4 pointer-events-none *:pointer-events-auto">
         <motion.a
           href="https://www.instagram.com/carboss_patio_brasil"
           target="_blank"
