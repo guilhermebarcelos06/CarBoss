@@ -166,7 +166,7 @@ export default function App() {
 
       {/* Navbar Container */}
       <nav
-        className={`fixed top-0 w-full z-[120] transition-all duration-500 flex items-center justify-between px-6 md:px-12 py-5 lg:py-8 ${scrolled && !mobileMenuOpen ? 'glass bg-[#080808]/80 py-4 border-b border-white/5' : 'bg-transparent'
+        className={`fixed top-0 w-full z-[120] transition-all duration-500 flex items-center justify-between px-4 sm:px-6 md:px-12 py-4 md:py-5 lg:py-8 ${scrolled && !mobileMenuOpen ? 'glass bg-[#080808]/90 py-3 md:py-4 border-b border-white/5' : 'bg-transparent'
           }`}
       >
         <div className="flex items-center gap-3 md:gap-4 relative z-[130]">
@@ -203,10 +203,11 @@ export default function App() {
 
         {/* Mobile menu toggle */}
         <button
-          className="lg:hidden w-10 h-10 flex items-center justify-center text-white bg-white/5 rounded-full border border-white/10 relative z-[130] hover:bg-brand/10 transition-colors"
+          className="lg:hidden w-12 h-12 flex items-center justify-center text-white bg-white/5 rounded-full border border-white/10 relative z-[130] hover:bg-brand/10 transition-colors"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle Menu"
         >
-          {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </nav>
 
@@ -248,7 +249,7 @@ export default function App() {
       </AnimatePresence>
 
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center pt-32 pb-20 md:pt-48 md:pb-32 px-6 md:px-12 overflow-hidden">
+      <section className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center pt-36 pb-20 md:pt-48 md:pb-32 px-4 sm:px-6 md:px-12 overflow-hidden">
         {/* Background Grid Decoration */}
         <div className="absolute inset-0 z-0 flex items-center justify-center opacity-[0.03] pointer-events-none">
           <div className="w-full h-full animate-grid bg-[linear-gradient(rgba(224,28,36,0.3)_1px,transparent_1px),linear-gradient(90deg,rgba(224,28,36,0.3)_1px,transparent_1px)] bg-[length:60px_60px]" />
@@ -271,7 +272,7 @@ export default function App() {
               </div>
             </div>
 
-            <h2 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[10rem] font-display font-black leading-[0.85] tracking-tighter text-white uppercase sm:normal-case">
+            <h2 className="text-[12vw] sm:text-6xl md:text-8xl lg:text-9xl xl:text-[10rem] font-display font-black leading-[0.85] tracking-tighter text-white uppercase sm:normal-case mt-4 md:mt-0">
               CADA <span className="text-brand italic drop-shadow-[0_0_40px_rgba(224,28,36,0.25)] text-stroke">DETALHE</span><br />
               CONTA UMA<br />HISTÓRIA.
             </h2>
@@ -344,7 +345,7 @@ export default function App() {
                 key={i}
                 {...fadeIn}
                 transition={{ duration: 0.6, delay: i * 0.05 }}
-                className="glass p-10 md:p-14 hover:border-brand/50 transition-all duration-700 group flex flex-col gap-10 hover:-translate-y-3 cursor-default relative overflow-hidden"
+                className="glass p-8 md:p-14 hover:border-brand/50 transition-all duration-700 group flex flex-col gap-8 md:gap-10 hover:-translate-y-3 cursor-default relative overflow-hidden"
               >
                 <div className="absolute -right-4 -top-4 w-24 h-24 bg-brand/5 rounded-full blur-2xl group-hover:bg-brand/10 transition-colors" />
                 <div className="text-brand w-14 h-14 flex items-center justify-center bg-black/60 border border-white/10 group-hover:bg-brand group-hover:text-white transition-all duration-500 rounded-[2px] relative z-10">
@@ -504,9 +505,10 @@ export default function App() {
                             });
                           }
                         }}
-                        className="w-10 h-10 glass rounded-none flex items-center justify-center text-white hover:bg-brand transition-colors"
+                        className="w-12 h-12 md:w-10 md:h-10 glass rounded-none flex items-center justify-center text-white hover:bg-brand transition-colors"
+                        aria-label="Share"
                       >
-                        <Share2 size={16} />
+                        <Share2 size={18} />
                       </button>
                     </div>
                     <span className="text-[9px] uppercase font-bold tracking-[0.4em] text-brand mb-2">{img.tag}</span>
@@ -572,13 +574,13 @@ export default function App() {
               </div>
             </div>
 
-            <div className="flex gap-6">
+            <div className="flex flex-wrap md:flex-nowrap gap-4 md:gap-6 justify-center w-full md:w-auto">
               {[
-                { icon: <Instagram size={20} />, href: 'https://www.instagram.com/carboss_patio_brasil' },
-                { icon: <MapPin size={20} />, href: 'https://maps.google.com' },
-                { icon: <Phone size={20} />, href: 'https://wa.me/556199741358' }
+                { icon: <Instagram size={24} />, href: 'https://www.instagram.com/carboss_patio_brasil' },
+                { icon: <MapPin size={24} />, href: 'https://maps.google.com' },
+                { icon: <Phone size={24} />, href: 'https://wa.me/556199741358' }
               ].map((social, i) => (
-                <a key={i} href={social.href} target="_blank" className="w-12 h-12 border border-white/5 flex items-center justify-center text-gray-600 hover:text-brand hover:border-brand/40 transition-all group rounded-sm focus:outline-none focus:ring-2 focus:ring-brand">
+                <a key={i} href={social.href} target="_blank" className="w-14 h-14 md:w-12 md:h-12 border border-white/5 flex items-center justify-center text-gray-600 hover:text-brand hover:border-brand/40 transition-all group rounded-sm focus:outline-none focus:ring-2 focus:ring-brand">
                   <div className="group-hover:scale-110 transition-transform">
                     {social.icon}
                   </div>
